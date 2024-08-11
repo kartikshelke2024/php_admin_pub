@@ -58,7 +58,7 @@
                     <li class="social-wp"><a href="https://wa.me/918956561511?text=Hello" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                     <li class="social-fb"><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                     <li class="social-twitter"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="social-insta"><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="social-insta"><a target="_blank" href="https://www.instagram.com/sunglidelubricants9424?igsh=Z3QyeTFjajM0aXUw"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                     <li class="social-pin"><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
                 </ul>
             </div>

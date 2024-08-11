@@ -60,6 +60,52 @@
                     ClearForm()
                 });
             }
+            function Set_Add_Edit_Flow() {
+
+                if ($('#ctl00_ContentPlaceHolder1_txtAEFlag').val() == "A") {
+                    cmdAdd_Click()
+                } else if ($('#ctl00_ContentPlaceHolder1_txtAEFlag').val() == "E") {
+                    cmdEdit_Click()
+                } else {
+                    window.location.href = 'ErrorPage.aspx';
+                }
+            }
+            function cmdAdd_Click() {
+                try {
+                    var fid = $('#ctl00_ContentPlaceHolder1_txtFid').val()
+                    if ($('#ctl00_ContentPlaceHolder1_txtADDFLAG').val() == "No") {
+                        window.location.href = "ErrorPage.aspx?fid=" + fid + "&Errorcode=3"
+                        return
+                    }
+                    $("#Div_Edit").show()
+                    $("#ctl00_ContentPlaceHolder1_FrEdit").hide()
+                    $("#cmddelete").hide()
+                    $("#ctl00_ContentPlaceHolder1_txtIsEdit").val("False")
+                    // return
+                } catch (e) {
+                    $(".loader").fadeOut("slow");
+                }
+            }
+            function cmdEdit_Click() {
+                try {
+                    var fid = $('#ctl00_ContentPlaceHolder1_txtFid').val()
+
+                    if ($('#ctl00_ContentPlaceHolder1_txtEDITFLAG').val() == "No") {
+                        window.location.href = "ErrorPage.aspx?fid=" + fid + "&Errorcode=3"
+                        return
+                    }
+                    $("#ctl00_ContentPlaceHolder1_FrMain").hide()
+                    $("#ctl00_ContentPlaceHolder1_FrEdit").show()
+                    $("#ctl00_ContentPlaceHolder1_txtIsEdit").val("True")
+
+                    FillDG('P')
+                    //Fill_ajax_Progrssive()
+                    return
+                } catch (e) {
+                    $(".loader").fadeOut("slow");
+                }
+            }
+
             function ValidateSearchData() {
                 var txtPatientName = document.getElementById('ctl00_ContentPlaceHolder1_txtPatientName');
                 var dtpFDate = document.getElementById('ctl00_ContentPlaceHolder1_dtpFDate');

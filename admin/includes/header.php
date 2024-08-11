@@ -28,7 +28,7 @@ header("Location:login.php");
     <link rel="stylesheet" href="<?=$base_path?>admin/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?=$base_path?>admin/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="<?=$base_path?>admin/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Sunglide lubricants</title>
     <!-- jquery 3.3.1 -->
     <script src="<?=$base_path?>admin/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 </head>

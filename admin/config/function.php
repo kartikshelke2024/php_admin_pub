@@ -10,12 +10,20 @@ function mysqli_escape_array($db=null,$array=array()){
 
 // Fill DropDown
 
+
+
 function populateDropdown($dropdownId, $data, $selectedValue = null) {
     $html = '<select class="form-control" id="' . $dropdownId . '" name="' . $dropdownId . '">';
-    foreach ($data as $item) {
-        $selected = ($item[0] == $selectedValue) ? 'selected' : '';
-        $html .= '<option value="' . $item[0] . '" ' . $selected . '>' . $item[1] . '</option>';
+    
+    if (!empty($data)) {
+        foreach ($data as $item) {
+            $selected = isset($item[0]) && $item[0] == $selectedValue ? 'selected' : '';
+            $html .= '<option value="' . htmlspecialchars($item[0] ?? '') . '" ' . $selected . '>' . htmlspecialchars($item[1] ?? '') . '</option>';
+        }
+    } else {
+        $html .= '<option value="">No options available</option>';
     }
+
     $html .= '</select>';
     return $html;
 }

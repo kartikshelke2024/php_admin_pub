@@ -22,7 +22,7 @@
                                 <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </li>
-                        <li class="nav-item dropdown notification">
+                        <li class="nav-item dropdown notification d-none">
                             <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
                                 <li>
@@ -69,7 +69,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown connection">
+                        <li class="nav-item dropdown connection d-none">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
                                 <li class="connection-list">
@@ -137,10 +137,39 @@
                                 <div id="submenu-users" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?=$base_path?>admin/users/user">User</a>
+                                            <a class="nav-link" href="<?=$base_path?>admin/users/add-user?AEFLAG=E">User</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?=$base_path?>admin/users/add-user">Add User</a>
+                                            <a class="nav-link" href="<?=$base_path?>admin/users/add-user?AEFLAG=A">Add User</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-category" aria-controls="submenu-users"><i class="fa fa-fw fa-rocket"></i>Category</a>
+                                <div id="submenu-category" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?=$base_path?>admin/category/add-category?AEFLAG=E">Category</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?=$base_path?>admin/category/add-category?AEFLAG=A">Add Category</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-product" aria-controls="submenu-users"><i class="fa fa-fw fa-product"></i>Product</a>
+                                <div id="submenu-product" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?=$base_path?>admin/add-product?AEFLAG=E">Product</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?=$base_path?>admin/add-product?AEFLAG=A">Add Product</a>
                                         </li>
                                        
                                     </ul>

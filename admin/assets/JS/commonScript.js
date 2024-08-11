@@ -49,3 +49,38 @@ comm_script.fill_table_data = function(tbl_struct, response, tableID, lblCtID) {
 
     }
 }
+
+
+comm_script.populateDropdown =function (dropdownId, data, selectedValue = null) {
+    var $dropdown = $('#' + dropdownId);
+    $dropdown.empty(); // Clear existing options
+
+    if (data.length > 0) {
+        $dropdown.append($('<option>', {
+            value: '',
+            text: 'Select option'
+        }));
+        data.forEach(function(item) {
+            
+            if (item[0] == selectedValue) {
+                var isSelected = (item[0] === selectedValue) ? 'selected' : '';
+                $dropdown.append($('<option>', {
+                    value: item[0],
+                    text: item[1],
+                    selected: isSelected
+                }));
+            } else {
+                $dropdown.append($('<option>', {
+                    value: item[0],
+                    text: item[1],
+                }));
+            }
+           
+        });
+    } else {
+        $dropdown.append($('<option>', {
+            value: '',
+            text: 'No options available'
+        }));
+    }
+}

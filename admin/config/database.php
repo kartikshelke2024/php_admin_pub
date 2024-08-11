@@ -1,5 +1,5 @@
 <?php
 $host = 'localhost';
-$db = 'admin_panal_old';
+$db = 'QA_sunglidelubricants';
 $user = 'root';
 $pass = '';

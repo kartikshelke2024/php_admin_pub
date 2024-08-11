@@ -19,7 +19,9 @@ if (isset($_POST['login_admin'])) {
             $_SESSION['admin_name'] = $result['admin_name'];
            // print_r($result);
            // print_r($result['admin_id']);
-            header("Location:index");
+           // header("Location:index");
+            header("Location:users/add-user?AEFLAG=E");
+            
             exit();
         } else {
             $errMSG = "Invalid username or password.";
