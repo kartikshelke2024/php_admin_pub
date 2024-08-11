@@ -4,6 +4,7 @@ include('../includes/header.php');
 include('../includes/menu.php');
 
 // Fetch Parent Categories
+
 $parent_categories_data;
 $stmt = $conn->prepare("CALL LS_M_CAT()");
 $stmt->execute();
@@ -245,7 +246,7 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
                 try {
                     $(".loader").show()
                     $.ajax({
-                        url: '../ajax/M_Cat_services.php',
+                        url: '../ajax/M_Cat_Services.php',
                         type: 'POST',
                         data: { action: 'fetchCategories' },
                         dataType: 'json',

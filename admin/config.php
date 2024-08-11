@@ -1,8 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "admin_panal_old";
+
+require_once('config/database.php');
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

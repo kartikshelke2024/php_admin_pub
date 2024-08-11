@@ -1,5 +1,11 @@
 <?php
-$host = 'localhost';
-$db = 'QA_sunglidelubricants';
-$user = 'root';
-$pass = '';
+// $servername = "localhost:3306";
+// $username = "sunglidelubricants";
+// $password = "Sunglide@2024";
+// $dbname = "PR_sunglidelubricants";
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "admin_panal_old";
+

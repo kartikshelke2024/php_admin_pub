@@ -150,14 +150,14 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
     </div>
 
 
- <div class="d-none">
-    <input type="hidden" name="" id="txtEDITFLAG" Value="Yes">
-    <input type="hidden" name="" id="txtADDFLAG" Value="Yes">
-    <input type="hidden" name="" id="txtSaveFlag" Value="Yes">
-    <input type="hidden" name="" id="txttxtDelFlag" Value="Yes">
-    <input type="hidden" name="" id="txtLoadFlag" Value="Yes">
-    <input type="hidden" name="" id="txtAEFlag" Value="<?=$AEFLAG?>">
-</div>
+    <div class="d-none">
+        <input type="hidden" name="" id="txtEDITFLAG" Value="Yes">
+        <input type="hidden" name="" id="txtADDFLAG" Value="Yes">
+        <input type="hidden" name="" id="txtSaveFlag" Value="Yes">
+        <input type="hidden" name="" id="txttxtDelFlag" Value="Yes">
+        <input type="hidden" name="" id="txtLoadFlag" Value="Yes">
+        <input type="hidden" name="" id="txtAEFlag" Value="<?=$AEFLAG?>">
+    </div>
 <?php include('../includes/footer.php');?>
 
 <script>

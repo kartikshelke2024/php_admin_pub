@@ -49,7 +49,7 @@
     <!-- <script src="<?=$base_path?>admin/assets/vendor/charts/c3charts/C3chartjs.js"></script> -->
     <!-- <script src="<?=$base_path?>admin/assets/libs/js/dashboard-ecommerce.js"></script> -->
 
-    <script src="<?=$base_path?>admin/assets/js/commonscript.js"></script>
+    
 
 </body>
  

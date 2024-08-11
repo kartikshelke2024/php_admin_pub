@@ -31,4 +31,5 @@ header("Location:login.php");
     <title>Sunglide lubricants</title>
     <!-- jquery 3.3.1 -->
     <script src="<?=$base_path?>admin/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="<?=$base_path?>admin/assets/libs/js/commonScript.js"></script>
 </head>

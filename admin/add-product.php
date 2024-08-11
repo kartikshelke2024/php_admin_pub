@@ -13,6 +13,8 @@ $categories_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
 
 ?>
+<script src="https://cdn.tiny.cloud/1/k14xh4hxf5zpps5fc1jdllwxi3rxnq9k4znyy0czv3zj0w0g/tinymce/6/tinymce.min.js"></script>
+
 
 <div class="dashboard-wrapper">
     <div class="container-fluid dashboard-content">
@@ -89,13 +91,13 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                <div class="d-none col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                                                     <div class="form-group">
                                                         <label for="product_image" class="col-form-label">Product Image</label>
                                                         <input id="product_image" name="product_image" type="file" class="form-control">
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                     <div class="form-group">
                                                         <label for="product_desc" class="col-form-label">Product Description</label>
                                                         <textarea id="product_desc" name="product_desc" class="form-control" rows="4"></textarea>
@@ -222,6 +224,15 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
             Set_Add_Edit_Flow()
             //window.location.href = "add-product.php?AEFLAG=" + (AEFLAG == "E" ? "E" : "A");
         });
+
+       
+    tinymce.init({
+        selector: '#product_desc', // ID of the textarea
+        plugins: 'advlist autolink lists link image charmap preview anchor textcolor',
+        toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+
     }
 
     function Set_Add_Edit_Flow() {
@@ -293,10 +304,10 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
             errorMsg += errorMsg == "" ? 'Category Name' : ", Category Name";
             isValid = false;
         }
-        if (product_desc === '') {
-            errorMsg += errorMsg == "" ? 'Product Description' : ", Product Description";
-            isValid = false;
-        }
+        // if (product_desc === '') {
+        //     errorMsg += errorMsg == "" ? 'Product Description' : ", Product Description";
+        //     isValid = false;
+        // }
         if (meta_title === '') {
             errorMsg += errorMsg == "" ? 'Meta Title' : ", Meta Title";
             isValid = false;
@@ -421,6 +432,7 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
                 $('#txt_sub_cat_val').val(category.sub_category_id);
                 $('#product_image').val(category.product_img);
                 $('#product_desc').val(category.product_desc);
+                tinymce.get('product_desc').setContent(category.product_desc);
                 $('#key_dtl').val(category.product_key_details);
                 $('#sku').val(category.sku);
                 $('#price').val(category.price);
@@ -483,11 +495,14 @@ $AEFLAG = isset($_GET['AEFLAG']) ? $_GET['AEFLAG'] : '';
     // }
 
 
-
+    function getEditorContent() {
+        return tinymce.get('product_desc').getContent();
+        }
 
 
     function IU_ProductData() {
-        
+        var content = getEditorContent();
+        $('#product_desc').val(content); // Update the textarea value with TinyMCE content
         var action = $("#update_product_id").val() === '' ? 'A' : 'E';
         var formData = new FormData($("#product-form")[0]);
         formData.append('AEFLAG', action);
