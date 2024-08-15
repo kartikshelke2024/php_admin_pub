@@ -1,0 +1,38 @@
+# Ignore VSCode settings
+.vscode/
+
+# Ignore database scripts
+DB_scripts/
+
+# Ignore demo SQL and local MySQL session files
+DEMO_SQL/
+Local MySQL.session.sql
+
+# Ignore admin uploads
+admin/uploads/
+
+# Ignore various images
+img/*.jpeg
+img/*.png
+
+# Ignore specific files
+robots.txt
+sitemap.xml
+terms-conditions-and-policies.php
+why-us.php
+contact-sunglide.php
+product-details.php
+product.php
+
+# Ignore specific PHP files
+admin/ajax/content_ajax.php
+admin/contact.php
+
+# Ignore the admin ajax directory
+admin/ajax/
+
+# Ignore all PHP files in the root (except for the ones explicitly listed above)
+*.php
+
+# Ignore all HTML files in the root
+*.html
